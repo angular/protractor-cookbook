@@ -1,8 +1,3 @@
-Introduction
-============
-
-Junit reports are helpful for
-
 Setup
 =====
 
