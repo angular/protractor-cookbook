@@ -6,10 +6,10 @@
     "sourceMap": false,
     "declaration": false,
     "removeComments": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "outDir": "tmp"
   },
   "exclude": [
-    "node_modules",
-    "typings/globals"
+    "node_modules"
   ]
 }
