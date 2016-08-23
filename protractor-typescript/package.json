@@ -5,14 +5,17 @@
   "main": "conf.js",
   "scripts": {
     "pretest": "npm run tsc && webdriver-manager update",
-    "test": "protractor tmp/conf.js",
+    "test": "npm run test-example && npm run test-example-on-prepare",
+    "test-example": "protractor tmp/example/config.js",
+    "test-example-on-prepare": "protractor tmp/example-on-prepare/config.js",
     "tsc": "tsc"
   },
   "author": "Craig Nishina <craig.nishina@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^2.0.0",
-    "protractor": "4.0.3"
+    "jasmine": "^2.4.1",
+    "protractor": "^4.0.3",
+    "typescript": "^2.0.0"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.31",
