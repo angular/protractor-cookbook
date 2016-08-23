@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "description": "protractor cookbook tests",
   "scripts": {
-    "postinstall": "npm run typings",
     "pretest": "npm run tsc",
     "test": "jasmine",
-    "tsc": "tsc",
-    "typings": "typings install"
+    "tsc": "tsc"
   },
   "author": "Craig Nishina <craig.nishina@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "jasmine": "^2.4.1",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.2"
+    "typescript": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.2.32",
+    "@types/node": "^6.0.37"
   }
 }
