@@ -42,7 +42,6 @@ Step 2 - Starting the Selenium Nodes
 -----------------------------------------------------------------------------
 ``` shell
 docker run -d --link selenium-hub:hub selenium/node-chrome:latest
-docker run -d --link selenium-hub:hub selenium/node-firefox:latest
 ```
 
 The above would create a chrome node and link it to the Selenium hub/grid created earlier.
@@ -62,14 +61,13 @@ and run your tests.
 ./node_modules/.bin/protractor protractor-conf.js
 ```
 
-At this point you would be able to see the output of the tests and  will not be able to visually confirm that the tests are running.
-
 Step 4 - Debugging the tests
 -----------------------------------------------------------------------------
+At this point you would be able to see the output of the tests and  will not be able to visually confirm that the tests are running.
 
 Install [RealVNC](https://www.realvnc.com) viewer.
 
-One can add a chrome-debug-node which has a vnc server set up to the selenium grid and see the tests running .
+One can add a node-chrome-debug which has a vnc server set up to the selenium grid and see the tests running .
 
 One can also use the standalone-chrome-debug too.
 
@@ -137,14 +135,12 @@ npm install
 docker-compose up -d --remove-orphans
 docker-compose scale chromenode=5
 
-./node_modules/.bin/protractor docker-protractor-grid-conf.js
 ```
+and then reference it in the package.json
 
 ``` shell
-chmod +x run-tests.sh
-./run-tests.sh
+npm test
 ```
-
 Where to go next
 ----------------
 

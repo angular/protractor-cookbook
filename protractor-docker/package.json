@@ -1,0 +1,11 @@
+{
+    "name": "protractor-docker-setup",
+    "dependencies": {
+        "protractor": "4.0.8",
+        "chromedriver": "2.24.1"
+    },
+    "scripts": {
+        "pretest": "npm install && ./docker-setup.sh",
+        "test": "protractor docker-selenium-grid-conf.js"
+    }
+}
