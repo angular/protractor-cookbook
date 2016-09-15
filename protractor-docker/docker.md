@@ -67,9 +67,11 @@ At this point you would be able to see the output of the tests and  will not be 
 
 Install [RealVNC](https://www.realvnc.com) viewer.
 
-One can add a node-chrome-debug which has a vnc server set up to the selenium grid and see the tests running .
+One needs to add a node-chrome-debug ( which has a vnc server set up )  to the selenium grid instead of node-chrome
+to be able to view the tests running . This can not be acheived with a node-chrome because the vnc server is 
+not setup , in the node-chrome docker image.
 
-One can also use the standalone-chrome-debug too.
+One can also use the standalone-chrome-debug for the same.
 
 ``` shell
 docker run -d -p <port>:5900 --link selenium-hub:hub selenium/node-chrome-debug:latest
