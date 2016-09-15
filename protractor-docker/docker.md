@@ -125,16 +125,14 @@ docker-compose scale chromenode=5
 ```
 
 The best way to do would be to wrap all of the above in a shell script file .
+Ensure the shell script file has execute permissions.
 
 ``` shell
 docker -v
 docker-compose -v
 
-npm install 
-
 docker-compose up -d --remove-orphans
 docker-compose scale chromenode=5
-
 ```
 and then reference it in the package.json
 
