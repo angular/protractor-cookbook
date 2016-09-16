@@ -1,0 +1,25 @@
+seleniumhub:
+  image: selenium/hub:2.53.0
+  ports:
+    - 4444:4444
+
+# chromednode:
+#   image: selenium/node-chrome-debug:2.53.0
+#   expose:
+#     - 5900
+#   links:
+#     - seleniumhub:hub
+
+# firefoxnode:
+#   image: selenium/node-firefox
+#   expose:
+#     - 5900
+#   links:
+#     - seleniumhub:hub
+
+chromenode:
+  image: selenium/node-chrome:2.53.0
+  ports:
+    - 5900
+  links:
+    - seleniumhub:hub
