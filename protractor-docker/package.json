@@ -1,7 +1,7 @@
 {
     "name": "protractor-docker-setup",
     "dependencies": {
-        "protractor": "4.0.8"
+        "protractor": "4.0.9"
     },
     "scripts": {
         "pretest": "npm install && ./docker-setup.sh",
