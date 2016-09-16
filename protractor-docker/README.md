@@ -142,6 +142,9 @@ In order to scale the number of chrome nodes , one can do :
 docker-compose scale chromenode=5
 ```
 
+The number of nodes that one can connect to a selenium hub is by default 5.Hence `chromenode=5`.
+If one wants to increase the number of nodes, one has to change the settings on Hub to support the additional nodes first.
+
 The best way to do would be to wrap all of the above in a shell script file .
 Ensure the shell script file has execute permissions.
 
