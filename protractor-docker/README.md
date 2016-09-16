@@ -54,11 +54,27 @@ Update the seleniumAddress to the url of the hub in your protractor config file.
 ``` js
 seleniumAddress: 'http://localhost:4444/wd/hub'
 ```
-
 and run your tests. 
 
 ``` shell
-./node_modules/.bin/protractor protractor-conf.js
+./node_modules/.bin/protractor <config-file>
+```
+
+- Maximising the browser window 
+
+    - Depending on the webpage, the element needs to be scrolled to , in order for it to be visible, 
+    by maximising the window , the number of times , one would have to use  the util method for it, decreases.
+
+    - Also useful for debugging tests.
+
+- Specifying implicit wait
+
+    - By specifying the implicit wait , protractor waits before throwing an error for performing an action. Especially useful 
+    when the page load time fluctuates due to network.
+
+``` js
+browser.manage().window().maximize();
+browser.manage().timeouts().implicitlyWait(5000);
 ```
 
 Step 4 - Debugging the tests
@@ -83,7 +99,7 @@ Find the port that VNC server exposes for the container :
 docker port <container-name or container-id> 5900
 ```
 
-and view it using the vnc viewer using the output of the above command.
+  and view it using the vnc viewer using the output of the above command.
 
 
 Using Docker Compose
