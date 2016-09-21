@@ -1,0 +1,19 @@
+{
+  "name": "protractor-javascript",
+  "version": "1.0.0",
+  "description": "from https://github.com/juliemr/protractor-demo",
+  "scripts": {
+    "pretest": "webdriver-manager update",
+    "test-browserlog": "protractor example-browserlog/conf.js",
+    "test-example": "protractor example/conf.js",
+    "test-network": "protractor example-network/conf.js",
+    "test-screenshot": "protractor example-screenshot/conf.js",
+    "test": "npm run test-browserlog && npm run test-example && npm run test-network"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "protractor": "4.0.9"
+  }
+}

@@ -11,6 +11,6 @@
   "dependencies": {
     "jasmine": "^2.4.1",
     "jasmine-reporters": "^2.2.0",
-    "protractor": "^4.0.3"
+    "protractor": "4.0.9"
   }
 }
