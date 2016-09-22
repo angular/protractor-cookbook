@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { ElementFinder, browser, by, element } from 'protractor';
 
 describe('slow calculator', () => {
   beforeEach(() => {
@@ -15,7 +15,10 @@ describe('slow calculator', () => {
   });
 
   describe('memory', () => {
-    let first, second, goButton;
+    let first: ElementFinder;
+    let second: ElementFinder;
+    let goButton: ElementFinder;
+    
     beforeEach(() => {
       first = element(by.model('first'));
       second = element(by.model('second'));
@@ -33,8 +36,8 @@ describe('slow calculator', () => {
       second.sendKeys('1');
       goButton.click();
 
-      first.sendKeys(10);
-      second.sendKeys(20);
+      first.sendKeys('10');
+      second.sendKeys('20');
       goButton.click();
 
       let memory = element.all(by.repeater('result in memory').
