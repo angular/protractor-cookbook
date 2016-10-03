@@ -1,4 +1,6 @@
-import {ProtractorBrowser} from 'protractor';
+import { ProtractorBrowser } from 'protractor';
+import { Environment } from './environment';
+let environment: Environment = new Environment();
 /*
 The config folder includes all the configuration files
 This example config file displays the basic protractor-cucumber framework configuration
@@ -8,13 +10,8 @@ tags option for specific scenarios added
 export let config = {
 
     directConnect: true,
-
-    baseUrl: 'http://juliemr.github.io/protractor-demo/',
-
-    capabilities: {
-        browserName: 'firefox'
-    },
-
+    baseUrl: environment.baseUrl,
+    capabilities: environment.capabilities,
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
@@ -26,7 +23,7 @@ export let config = {
         let globals = require('protractor');
         let browser: ProtractorBrowser = globals.browser;
         browser.driver.manage().window().maximize();
-       
+
     },
     // These are various cucumber compiler options
     cucumberOpts: {

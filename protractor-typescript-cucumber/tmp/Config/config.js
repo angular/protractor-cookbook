@@ -1,4 +1,6 @@
 "use strict";
+var environment_1 = require('./environment');
+var environment = new environment_1.Environment();
 /*
 The config folder includes all the configuration files
 This example config file displays the basic protractor-cucumber framework configuration
@@ -7,10 +9,8 @@ tags option for specific scenarios added
 **/
 exports.config = {
     directConnect: true,
-    baseUrl: 'http://juliemr.github.io/protractor-demo/',
-    capabilities: {
-        browserName: 'firefox'
-    },
+    baseUrl: environment.baseUrl,
+    capabilities: environment.capabilities,
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     specs: [

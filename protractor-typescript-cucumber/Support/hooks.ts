@@ -1,7 +1,6 @@
 /*jslint node: true*/
 import { browser } from 'protractor';
 import * as fs from 'fs';
-import { config } from '../Config/config';
 /*
 Hooks help us follow DRY principle, all the utility functions go here
 BeforeScenario, Features and screenshot hooks example provided here
@@ -9,7 +8,7 @@ BeforeScenario, Features and screenshot hooks example provided here
 export = function () {
 
     this.registerHandler('BeforeFeature', (event) => {
-        return browser.get(config.baseUrl);
+        return browser.get('/ng1/calculator');
     });
 
     this.After((scenario, done) => {

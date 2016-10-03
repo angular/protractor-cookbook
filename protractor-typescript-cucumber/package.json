@@ -21,7 +21,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "pretest": "npm run tsc",
+    "pretest": "webdriver-manager update && npm run tsc",
     "test": "protractor tmp/Config/config.js"
   },
   "author": "Ram Pasala <ram.pasala7@gmail.com>",

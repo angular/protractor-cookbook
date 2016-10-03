@@ -1,10 +1,9 @@
 "use strict";
 /*jslint node: true*/
 var protractor_1 = require('protractor');
-var config_1 = require('../Config/config');
 module.exports = function () {
     this.registerHandler('BeforeFeature', function (event) {
-        return protractor_1.browser.get(config_1.config.baseUrl);
+        return protractor_1.browser.get('/ng1/calculator');
     });
     this.After(function (scenario, done) {
         if (scenario.isFailed()) {
