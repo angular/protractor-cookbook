@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "description": "To demostrate protractor cucumber tests with typescript",
-  "homepage": "https://github.com/igniteram/protractor-cucumber-typescript",
   "keywords": [
     "protractor",
     "cucumber",
@@ -20,7 +19,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
+    "tsc": "./node_modules/typescript/bin/tsc",
     "pretest": "webdriver-manager update && npm run tsc",
     "test": "protractor tmp/Config/config.js"
   },
@@ -35,7 +34,7 @@
     "protractor-cucumber-framework": "^0.6.0"
   },
   "dependencies": {
-    "protractor": "^4.0.9",
+    "protractor": "^4.0.10",
     "ts-node": "^1.3.0",
     "typescript": "^2.0.0"
   },

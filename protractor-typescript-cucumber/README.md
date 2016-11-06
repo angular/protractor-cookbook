@@ -24,18 +24,27 @@ https://nodejs.org/en/download/
 3.Text Editor(Optional) installed-->Sublime/Visual Studio Code/Brackets.
 
 ####Setup Scripts
-* Clone the repository into a folder
-* Go inside the folder and run following command from terminal/command prompt
+* run following command from terminal/command prompt
 ```
    npm install 
 ```
 * All the dependencies from package.json and ambient typings would be installed in node_modules folder.
 
+####Setup & Run TestApp
+```
+cd ..
+cd testapp/
+
+    npm install
+
+    npm start 
+```
+
 ####Run Scripts
 ```
     npm test
 ```
-* The above command would create an output folder named 'tmp' and transpile the .ts files.
+* The above command should create an output folder named 'tmp' and transpile the .ts files.
 * It launches the Firefox Browser and run the scripts
 
 ##Contributions

@@ -1,4 +1,4 @@
-Feature: To test the multiply & divice feature of ng1 calculator
+Feature: To test the multiply & divide feature of ng1 calculator
 
 @MultiplyScenario
 Scenario: Multiply two numbers

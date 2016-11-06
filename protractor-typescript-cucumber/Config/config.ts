@@ -1,6 +1,6 @@
+import { environment } from './environment';
 import { ProtractorBrowser } from 'protractor';
-import { Environment } from './environment';
-let environment: Environment = new Environment();
+
 /*
 The config folder includes all the configuration files
 This example config file displays the basic protractor-cucumber framework configuration

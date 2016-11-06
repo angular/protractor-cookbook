@@ -1,16 +1,18 @@
 "use strict";
-var Environment = (function () {
-    function Environment() {
-        this.seleniumAddress = (process.env.SELENIUM_URL || 'http://localhost:4444/wd/hub');
-        this.capabilities = {
-            'browserName': (process.env.TEST_BROWSER_NAME || 'chrome'),
-            'version': (process.env.TEST_BROWSER_VERSION || 'ANY')
-        };
-        this.webServerDefaultPort = 8080;
-        this.interactiveTestPort = 6969;
-        this.baseUrl = 'http://' + (process.env.HTTP_HOST || 'localhost') +
-            ':' + (process.env.HTTP_PORT || this.webServerDefaultPort);
-    }
-    return Environment;
-}());
-exports.Environment = Environment;
+var webServerDefaultPort = 8081;
+exports.environment = {
+    // The address of a running selenium server.
+    seleniumAddress: (process.env.SELENIUM_URL || 'http://localhost:4444/wd/hub'),
+    // Capabilities to be passed to the webdriver instance.
+    capabilities: {
+        'browserName': (process.env.TEST_BROWSER_NAME || 'chrome'),
+        'version': (process.env.TEST_BROWSER_VERSION || 'ANY')
+    },
+    // Default http port to host the web server
+    webServerDefaultPort: webServerDefaultPort,
+    // Protractor interactive tests
+    interactiveTestPort: 6969,
+    // A base URL for your application under test.
+    baseUrl: 'http://' + (process.env.HTTP_HOST || 'localhost') +
+        ':' + (process.env.HTTP_PORT || webServerDefaultPort)
+};
