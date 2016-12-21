@@ -8,9 +8,11 @@
         "removeComments": false,
         "noImplicitAny": false,
         "outDir": "tmp",
+        "typeRoots": [ "./node_modules/@types" ],
         "types": ["node","cucumber"]
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "tmp"
     ]
 }
