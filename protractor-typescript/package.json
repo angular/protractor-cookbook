@@ -14,8 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "jasmine": "^2.4.1",
-    "protractor": "4.0.9",
-    "typescript": "^2.0.0"
+    "protractor": "4.0.13",
+    "typescript": "^2.1.4"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.31",
