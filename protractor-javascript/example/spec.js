@@ -1,6 +1,8 @@
+var env = require('../environment');
+
 describe('slow calculator', () => {
   beforeEach(() => {
-    browser.get('/ng1/calculator');
+    browser.get(env.url + '/ng1/calculator');
   });
 
   it('should add numbers', () => {

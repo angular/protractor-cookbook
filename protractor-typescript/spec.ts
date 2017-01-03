@@ -1,9 +1,9 @@
 import { ElementFinder, browser, by, element } from 'protractor';
+import * as env from './environment';
 
 describe('slow calculator', () => {
   beforeEach(() => {
-    // browser.get('http://angular.github.io/protractor-cookbook/ng1/calculator/');
-    browser.get('http://localhost:8080/ng1/calculator/');
+    browser.get(env.url + '/ng1/calculator/');
   });
 
   it('should add numbers', () => {
@@ -18,7 +18,7 @@ describe('slow calculator', () => {
     let first: ElementFinder;
     let second: ElementFinder;
     let goButton: ElementFinder;
-    
+
     beforeEach(() => {
       first = element(by.model('first'));
       second = element(by.model('second'));
