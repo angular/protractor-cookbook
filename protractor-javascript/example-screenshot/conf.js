@@ -18,6 +18,6 @@ exports.config = {
   baseUrl: env.baseUrl,
 
   onPrepare: function() {
-    jasmine.getEnv().addReporter(new ScreenshotReporter("output"));
+    jasmine.getEnv().addReporter(new ScreenshotReporter('output'));
   }
 };

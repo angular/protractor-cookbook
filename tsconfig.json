@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "declaration": false,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "types": ["jasmine", "node"]
+  },
+  "include": [
+    "tests/**/*"
+  ],
+  "exclude": [
+    "jasmine-junit-reports",
+    "node_modules",
+    "protractor-docker",
+    "protractor-javascript",
+    "protractor-typescript",
+    "protractor-typescript-cucumber",
+    "scripts",
+    "testapp"
+  ]
+}

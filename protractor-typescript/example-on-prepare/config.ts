@@ -9,4 +9,4 @@ export let config: Config = {
     browser.manage().window().maximize();
     browser.manage().timeouts().implicitlyWait(5000);
   }
-}
+};
