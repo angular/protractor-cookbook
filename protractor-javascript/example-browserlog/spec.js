@@ -1,3 +1,5 @@
+var env = require('../environment');
+
 describe('slow calculator', () => {
   var firstNum = element(by.model('first'));
   var secondNum = element(by.model('second'));
@@ -5,7 +7,7 @@ describe('slow calculator', () => {
   var result = element(by.binding('latest'));
 
   beforeEach(() => {
-    browser.get('/ng1/calculator');
+    browser.get(env.url + '/ng1/calculator');
   });
 
   afterEach(() => {

@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "from https://github.com/juliemr/protractor-demo",
   "scripts": {
-    "pretest": "webdriver-manager update",
-    "test-browserlog": "protractor example-browserlog/conf.js",
-    "test-example": "protractor example/conf.js",
-    "test-network": "protractor example-network/conf.js",
-    "test-screenshot": "protractor example-screenshot/conf.js",
-    "test": "npm run test-browserlog && npm run test-example && npm run test-network"
+    "example": "protractor example/conf.js",
+    "example-browserlog": "protractor example-browserlog/conf.js",
+    "example-network": "protractor example-network/conf.js",
+    "example-screenshot": "protractor example-screenshot/conf.js",
+    "pretest": "webdriver-manager update --gecko false",
+    "start": "cd ../testapp && npm install && npm start",
+    "test": "npm run example-browserlog && npm run example && npm run example-network",
+    "test-external": "export BASE_URL='http://angular.github.io' && npm test",
+    "text-local": "unset BASE_URL && npm test"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "protractor": "4.0.9"
+    "protractor": "4.0.14"
   }
 }
