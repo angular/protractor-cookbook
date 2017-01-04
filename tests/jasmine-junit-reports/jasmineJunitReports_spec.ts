@@ -14,20 +14,20 @@ describe('jasmine junit reports', () => {
     output = TestUtils.runCommand('npm', ['test'], options);
     if (output[1]) {
       let contents = output[1].toString();
-      console.log(contents);
       lines = contents.split('\n');
     }
   });
 
   describe('console output', () => {
-    let findLines = [
-      '1) example 1 typing in a name should type name and should fail',
-      '2) example 2 should list todos and should fail',
-      '4 specs, 2 failures'
-    ];
-    findLines.forEach(line => {
-      it('should have: "' + line + '"', () => {
-        expect(lines).not.toBeNull();
+    it('should have console logs', () => {
+      let findLines = [
+        '1) example 1 typing in a name should type name and should fail',
+        '2) example 2 should list todos and should fail',
+        '4 specs, 2 failures'
+      ];
+
+      expect(lines).not.toBeNull();
+      findLines.forEach(line => {
         expect(TestUtils.fileContains(line, lines)).toBeTruthy();
       });
     });
