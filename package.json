@@ -12,7 +12,7 @@
     "jasmine": "jasmine JASMINE_CONFIG_PATH=tests/spec/support/jasmine.json",
     "lint": "gulp lint",
     "start": "cd testapp && npm start",
-    "test": "run run jasmine",
+    "test": "npm run jasmine",
     "tsc": "tsc",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start"
