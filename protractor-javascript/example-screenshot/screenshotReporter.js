@@ -4,21 +4,21 @@ var path = require('path');
 
 var ScreenshotReporter = function(dir_) {
   console.log('here');
-  var dir = (dir_ ? dir_ : "/tmp/protractorss/");
+  var dir = (dir_ ? dir_ : '/tmp/protractorss/');
   dir = path.join(dir, new Date().toISOString());
   var index = 0;
 
   // base function to take a screenshot -- change path as needed
   var screenshot = function(testDescription, id) {
     console.log('screenshot');
-    var fname = testDescription.replace(/\s/g, "_") + "_" + id + ".png";
+    var fname = testDescription.replace(/\s/g, '_') + '_' + id + '.png';
     mkdirp(dir);
     browser.takeScreenshot().then(function(png) {
       var stream = fs.createWriteStream(path.join(dir, fname));
       stream.write(new Buffer(png, 'base64'));
       stream.end();
     });
-  }
+  };
 
   // takes screenshot on each failed expect
   var originalAddMatcherResult = jasmine.Spec.prototype.addExpectationResult;
@@ -35,7 +35,7 @@ var ScreenshotReporter = function(dir_) {
   // takes screenshot on each failed spec (including timeout)
   this.reportSpecResults = function(spec) {
     if (!spec.results().passed()) {
-      screenshot(spec.description, "end");
+      screenshot(spec.description, 'end');
     }
     index = 0;
   };
