@@ -2,7 +2,7 @@ import {TestUtils} from '../testUtils';
 
 describe('protractor javascript tests', () => {
   let options = {
-    cwd: '../protractor-javascript',
+    cwd: 'protractor-javascript',
     stdio: 'pipe'
   };
 
@@ -10,7 +10,7 @@ describe('protractor javascript tests', () => {
     TestUtils.runCommand('npm', ['install'], options);
   });
 
-  fit('do something', () => {
+  it('do something', () => {
     let output = TestUtils.runCommand('npm', ['test'], options);
     expect(output[2].toString()).toEqual('');
   });

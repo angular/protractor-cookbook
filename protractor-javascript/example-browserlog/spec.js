@@ -25,10 +25,10 @@ describe('slow calculator', () => {
   });
 
   it('should fail when the console has errors - FAILURE EXPECTED', () => {
-    browser.executeScript(function() {console.error('error from test')});
+    browser.executeScript(function() {console.error('error from test'); });
   });
 
   it('should pass when the console has non-error logs', () => {
-    browser.executeScript(function() {console.log('hi!')});
+    browser.executeScript(function() {console.log('hi!'); });
   });
 });
