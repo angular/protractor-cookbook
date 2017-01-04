@@ -21,7 +21,8 @@ describe('slow calculator', function() {
     expect(result.getText()).toEqual('3');
   });
 
-  // basic failure case that demonstrates screenshot -- screenshot will be generated for the following:
+  // basic failure case that demonstrates screenshot -- screenshot will be
+  // generated for the following:
   //  *for failed expectation @ fail_expectation_-_FAILURE_EXPECTED_1.png
   //  *for failed spec        @ fail_expectation_-_FAILURE_EXPECTED_end.png
   it('fail expectation - FAILURE EXPECTED', function() {
@@ -32,7 +33,7 @@ describe('slow calculator', function() {
   });
 
   // case where spec times out -- screenshot will be generated for the following:
-  //  *for timedout spec      @ timeout_-_FAILURE_EXPECTED_end.png
+  // * for timedout spec @ timeout_-_FAILURE_EXPECTED_end.png
   it('timeout - FAILURE EXPECTED', function() {
     firstNum.sendKeys('1');
     secondNum.sendKeys('2');
@@ -40,10 +41,14 @@ describe('slow calculator', function() {
     expect(result.getText()).toEqual('3');
   }, 100);
 
-  // case to show there is a screenshot for each failed expect -- screenshot will be generated for the following:
-  //  *for failed expectation#2 (i.e. toEqual('4'))  @ mixture_of_successful_and_failed_expects_-_FAILURE_EXPECTED_2.png
-  //  *for failed expectation#3 (i.e. toEqual('5'))  @ mixture_of_successful_and_failed_expects_-_FAILURE_EXPECTED_3.png
-  //  *for failed spec                               @ mixture_of_successful_and_failed_expects_-_FAILURE_EXPECTED_end.png
+  // case to show there is a screenshot for each failed expect -- screenshot
+  // will be generated for the following:
+  // * for failed expectation#2 (i.e. toEqual('4'))
+  //   @ mixture_of_successful_and_failed_expects_-_FAILURE_EXPECTED_2.png
+  // * for failed expectation#3 (i.e. toEqual('5'))
+  //   @ mixture_of_successful_and_failed_expects_-_FAILURE_EXPECTED_3.png
+  // * for failed spec
+  //   @ mixture_of_successful_and_failed_expects_-_FAILURE_EXPECTED_end.png
   // **note: successful expectations will not generate screenshots
   // **      (although you can change this behavior from the reporter)
   it('mixture of successful and failed expects - FAILURE EXPECTED', function() {

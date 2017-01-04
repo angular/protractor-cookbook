@@ -18,7 +18,7 @@ describe('slow calculator', () => {
     let first: ElementFinder;
     let second: ElementFinder;
     let goButton: ElementFinder;
-    
+
     beforeEach(() => {
       first = element(by.model('first'));
       second = element(by.model('second'));

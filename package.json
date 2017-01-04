@@ -1,0 +1,50 @@
+{
+  "name": "protractor-cookbook",
+  "version": "1.0.0",
+  "description": "Examples for using Protractor in various common scenarios.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/protractor-cookbook.git"
+  },
+  "scripts": {
+
+    "jasmine": "jasmine JASMINE_CONFIG_PATH=tests/spec/support/jasmine.json",
+    "lint": "gulp lint",
+    "start": "cd testapp && npm start",
+    "test": "run run jasmine",
+    "tsc": "tsc",
+    "webdriver-update": "webdriver-manager update",
+    "webdriver-start": "webdriver-manager start"
+  },
+  "keywords": [
+    "angular",
+    "test",
+    "testing",
+    "webdriver",
+    "webdriverjs",
+    "selenium",
+    "protractor"
+  ],
+  "author": "Craig Nishina <craig.nishina@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular/protractor-cookbook/issues"
+  },
+  "homepage": "https://github.com/angular/protractor-cookbook#readme",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.40",
+    "@types/node": "^6.0.56",
+    "gulp": "^3.9.1",
+    "gulp-clang-format": "^1.0.23",
+    "gulp-tslint": "^7.0.1",
+    "jasmine": "^2.5.2",
+    "jshint": "^2.9.4",
+    "protractor": "^4.0.14",
+    "run-sequence": "^1.2.2",
+    "tslint": "^4.2.0",
+    "tslint-eslint-rules": "^3.2.3",
+    "typescript": "^2.1.4",
+    "vrsource-tslint-rules": "^4.0.0"
+  }
+}
