@@ -7,7 +7,7 @@ describe('jasmine junit reports', () => {
 
   beforeAll(() => {
     let options = {
-      cwd: '../jasmine-junit-reports',
+      cwd: 'jasmine-junit-reports',
       stdio: 'pipe'
     };
     output = TestUtils.runCommand('npm', ['install'], options);
@@ -35,7 +35,7 @@ describe('jasmine junit reports', () => {
 
   describe('junit report', () => {
     it('should have output/junitresults-example1.xml', () => {
-      let filePath = path.resolve('../jasmine-junit-reports',
+      let filePath = path.resolve('jasmine-junit-reports',
         'output/junitresults-example1.xml');
       let fileLines = TestUtils.getFileLines(filePath);
       let findLines = [
@@ -47,7 +47,7 @@ describe('jasmine junit reports', () => {
       });
     });
     it('should have output/junitresults-example2.xml', () => {
-      let filePath = path.resolve('../jasmine-junit-reports',
+      let filePath = path.resolve('jasmine-junit-reports',
         'output/junitresults-example2.xml');
       let fileLines = TestUtils.getFileLines(filePath);
       let findLines = [
