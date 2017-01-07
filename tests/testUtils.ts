@@ -27,18 +27,29 @@ export class TestUtils {
   }
 
   /**
-   * Check if file contents contains a line.
+   * Check if contents contains a line.
    * @param {string} check
    * @param {string[]} file contents
    * @returns {boolean} if the line exists, return true
    */
-  static fileContains(contents: string, fileLines: string[]): boolean {
+  static checkContent(content: string, fileLines: string[]): boolean {
     for (let pos = 0; pos < fileLines.length; pos++) {
       let line = fileLines[pos];
-      if (line.indexOf(contents) >= 0) {
+      if (line.indexOf(content) >= 0) {
         return true;
       }
     }
     return false;
+  }
+
+  static checkContents(lines: string[], findLines: string[]): boolean {
+    let found = true;
+    findLines.forEach(line => {
+      found = found && TestUtils.checkContent(line, lines);
+    });
+    if (!found) {
+      console.log(lines.join('\n'));
+    }
+    return found;
   }
 }

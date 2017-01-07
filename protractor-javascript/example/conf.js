@@ -1,5 +1,6 @@
 // Tests for the calculator.
 exports.config = {
+  directConnect: true,
   capabilities: {
     'browserName': 'chrome'
   },

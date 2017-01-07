@@ -8,10 +8,10 @@
     "url": "git+https://github.com/angular/protractor-cookbook.git"
   },
   "scripts": {
-
+    "external-exports": "export BASE_URL='http://angular.github.io'",
     "jasmine": "jasmine JASMINE_CONFIG_PATH=tests/spec/support/jasmine.json",
     "lint": "gulp lint",
-    "start": "cd testapp && npm start",
+    "start": "cd testapp && npm install && npm start",
     "test": "npm run jasmine",
     "tsc": "tsc",
     "webdriver-update": "webdriver-manager update",

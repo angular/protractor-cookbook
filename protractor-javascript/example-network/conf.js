@@ -3,7 +3,6 @@ var env = require('../environment');
 // Tests for the calculator.
 exports.config = {
   directConnect: true,
-
   specs: [
     'spec.js'
   ],
