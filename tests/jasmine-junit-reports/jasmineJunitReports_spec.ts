@@ -10,7 +10,7 @@ describe('jasmine junit reports', () => {
       cwd: 'jasmine-junit-reports',
       stdio: 'pipe'
     };
-    output = TestUtils.runCommand('npm', ['install'], options);
+    TestUtils.runCommand('npm', ['install'], options);
     output = TestUtils.runCommand('npm', ['test'], options);
     if (output[1]) {
       let contents = output[1].toString();
@@ -25,11 +25,8 @@ describe('jasmine junit reports', () => {
         '2) example 2 should list todos and should fail',
         '4 specs, 2 failures'
       ];
-
       expect(lines).not.toBeNull();
-      findLines.forEach(line => {
-        expect(TestUtils.fileContains(line, lines)).toBeTruthy();
-      });
+      expect(TestUtils.checkContents(lines, findLines)).toBeTruthy();
     });
   });
 
@@ -42,10 +39,9 @@ describe('jasmine junit reports', () => {
         '<failure type="toEqual" message="Expected &apos;Hello Julie!&apos; to equal &apos;Hello Not Julie!&apos;.">',
         'errors="0" tests="2" skipped="0" disabled="0" failures="1"'];
       expect(fileLines).not.toBeNull();
-      findLines.forEach(line => {
-        expect(TestUtils.fileContains(line, fileLines)).toBeTruthy();
-      });
+      expect(TestUtils.checkContents(fileLines, findLines)).toBeTruthy();
     });
+
     it('should have output/junitresults-example2.xml', () => {
       let filePath = path.resolve('jasmine-junit-reports',
         'output/junitresults-example2.xml');
@@ -55,9 +51,7 @@ describe('jasmine junit reports', () => {
         '<failure type="toEqual" message="Expected &apos;build an angular app&apos; to equal &apos;something else&apos;.">',
         'errors="0" tests="2" skipped="0" disabled="0" failures="2"'];
       expect(fileLines).not.toBeNull();
-      findLines.forEach(line => {
-        expect(TestUtils.fileContains(line, fileLines)).toBeTruthy();
-      });
+      expect(TestUtils.checkContents(fileLines, findLines)).toBeTruthy();
     });
   });
 });
