@@ -23,7 +23,6 @@ describe('protractor javascript tests', () => {
     });
 
     it('console output', () => {
-      console.log(output.toString());
       let findLines = [
         '3 specs, 0 failures'
       ];

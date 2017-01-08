@@ -1,10 +1,6 @@
 let webServerDefaultPort = 8080;
 
 export let environment = {
-  // The address of a running selenium server.
-  seleniumAddress:
-    (process.env.SELENIUM_URL || 'http://localhost:4444/wd/hub'),
-
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
     'browserName':
