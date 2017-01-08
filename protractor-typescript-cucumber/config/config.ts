@@ -1,5 +1,5 @@
 import { environment } from './environment';
-import { ProtractorBrowser } from 'protractor';
+import { browser, Config } from 'protractor';
 
 /*
 The config folder includes all the configuration files
@@ -7,32 +7,28 @@ This example config file displays the basic protractor-cucumber framework config
 ts-node compiler is needed for cucumberjs
 tags option for specific scenarios added
 **/
-export let config = {
+export let config: Config = {
+  directConnect: true,
+  baseUrl: environment.baseUrl,
+  capabilities: environment.capabilities,
+  framework: 'custom',
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
 
-    directConnect: true,
-    baseUrl: environment.baseUrl,
-    capabilities: environment.capabilities,
-    framework: 'custom',
-    frameworkPath: require.resolve('protractor-cucumber-framework'),
-
-    specs: [
-        '../../Features/*.feature'
-    ],
-    // This utility function helps prepare our scripts with required actions like browser maximize
-    onPrepare: () => {
-        let globals = require('protractor');
-        let browser: ProtractorBrowser = globals.browser;
-        browser.driver.manage().window().maximize();
-
-    },
-    // These are various cucumber compiler options
-    cucumberOpts: {
-        compiler: "ts:ts-node/register",
-        monochrome: true,
-        strict: true,
-        plugin: ["pretty"],
-        require: ['../../StepDefinitions/*.ts', '../../Support/*.ts'],
-        //tags help us execute specific scenarios of feature files
-        tags: '@AddScenario,@SubtractScenario,@MultiplyScenario,@DivideScenario,@ModulusScenario'
-    }
+  specs: [
+    '../../features/*.feature'
+  ],
+  // This utility function helps prepare our scripts with required actions like browser maximize
+  onPrepare: () => {
+    browser.driver.manage().window().maximize();
+  },
+  // These are various cucumber compiler options
+  cucumberOpts: {
+    compiler: "ts:ts-node/register",
+    monochrome: true,
+    strict: true,
+    plugin: ["pretty"],
+    require: ['../../stepdefinitions/*.ts', '../../support/*.ts'],
+    //tags help us execute specific scenarios of feature files
+    tags: '@AddScenario,@SubtractScenario,@MultiplyScenario,@DivideScenario,@ModulusScenario'
+  }
 };
