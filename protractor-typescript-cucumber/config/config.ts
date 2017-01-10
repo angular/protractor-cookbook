@@ -8,7 +8,7 @@ ts-node compiler is needed for cucumberjs
 tags option for specific scenarios added
 **/
 export let config: Config = {
-  directConnect: true,
+  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   baseUrl: environment.baseUrl,
   capabilities: environment.capabilities,
   framework: 'custom',

@@ -40,7 +40,7 @@
     "gulp-tslint": "^7.0.1",
     "jasmine": "^2.5.2",
     "jshint": "^2.9.4",
-    "protractor": "^4.0.14",
+    "protractor": "^5.0.0",
     "run-sequence": "^1.2.2",
     "tslint": "^4.2.0",
     "tslint-eslint-rules": "^3.2.3",

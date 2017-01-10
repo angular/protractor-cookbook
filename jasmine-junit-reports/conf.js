@@ -1,5 +1,5 @@
 exports.config = {
-  directConnect: true,
+  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   capabilities: {
     browserName: 'chrome'
   },
@@ -19,7 +19,7 @@ exports.config = {
       //   output/junitresults-example1.xml
       //   output/junitresults-example2.xml
       consolidateAll: false
-      
+
     });
     jasmine.getEnv().addReporter(junitReporter);
   }
