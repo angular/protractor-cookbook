@@ -19,14 +19,13 @@
   ],
   "scripts": {
     "example": "protractor tmp/config/config.js",
-    "pretest": "npm run tsc && npm run webdriver-update",
+    "pretest": "npm run tsc",
     "test": "npm run example",
-    "tsc": "tsc",
-    "webdriver-update": "webdriver-manager update --standalone false --gecko false"
+    "tsc": "tsc"
   },
   "author": "Ram Pasala <ram.pasala7@gmail.com>",
   "dependencies": {
-    "protractor": "^4.0.14",
+    "protractor": "^5.0.0",
     "ts-node": "^2.0.0",
     "typescript": "^2.1.4"
   },

@@ -10,7 +10,6 @@ describe('protractor javascript tests', () => {
 
   beforeAll(() => {
     TestUtils.runCommand('npm', ['install'], options);
-    output = TestUtils.runCommand('npm', ['run', 'pretest'], options);
   });
 
   describe('example', () => {
