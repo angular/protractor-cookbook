@@ -8,8 +8,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "jasmine": "^2.4.1",
+    "jasmine": "^2.5.3",
     "jasmine-reporters": "^2.2.0",
-    "protractor": "^5.0.0"
+    "protractor": "^5.1.0"
   }
 }

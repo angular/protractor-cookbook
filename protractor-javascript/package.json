@@ -16,6 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "protractor": "^5.0.0"
+    "protractor": "^5.1.0"
   }
 }

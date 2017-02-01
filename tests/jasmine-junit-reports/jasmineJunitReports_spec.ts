@@ -47,8 +47,8 @@ describe('jasmine junit reports', () => {
         'output/junitresults-example2.xml');
       let fileLines = TestUtils.getFileLines(filePath);
       let findLines = [
-        '<failure type="toEqual" message="Expected 2 to equal 100.">',
-        '<failure type="toEqual" message="Expected &apos;build an angular app&apos; to equal &apos;something else&apos;.">',
+        '<failure type="toEqual" message="Expected 2 to equal 100."',
+        '<failure type="toEqual" message="Expected &apos;build an AngularJS app&apos;',
         'errors="0" tests="2" skipped="0" disabled="0" failures="2"'];
       expect(fileLines).not.toBeNull();
       expect(TestUtils.checkContents(fileLines, findLines)).toBeTruthy();

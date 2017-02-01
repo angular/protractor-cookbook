@@ -11,6 +11,7 @@
     "external-exports": "export BASE_URL='http://angular.github.io'",
     "jasmine": "jasmine JASMINE_CONFIG_PATH=tests/spec/support/jasmine.json",
     "lint": "gulp lint",
+    "pretest": "npm run tsc",
     "start": "cd testapp && npm install && npm start",
     "test": "npm run jasmine",
     "tsc": "tsc",
@@ -33,18 +34,18 @@
   },
   "homepage": "https://github.com/angular/protractor-cookbook#readme",
   "devDependencies": {
-    "@types/jasmine": "^2.5.40",
-    "@types/node": "^6.0.56",
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^6.0.62",
     "gulp": "^3.9.1",
     "gulp-clang-format": "^1.0.23",
     "gulp-tslint": "^7.0.1",
-    "jasmine": "^2.5.2",
+    "jasmine": "^2.5.3",
     "jshint": "^2.9.4",
-    "protractor": "^5.0.0",
+    "protractor": "^5.1.0",
     "run-sequence": "^1.2.2",
-    "tslint": "^4.2.0",
+    "tslint": "^4.4.2",
     "tslint-eslint-rules": "^3.2.3",
-    "typescript": "^2.1.4",
-    "vrsource-tslint-rules": "^4.0.0"
+    "typescript": "^2.1.5",
+    "vrsource-tslint-rules": "^4.0.1"
   }
 }
