@@ -7,7 +7,7 @@ describe('example 2', () => {
 
   it('should list todos and should pass', () => {
     expect(todoList.count()).toEqual(2);
-    expect(todoList.get(1).getText()).toEqual('build an angular app');
+    expect(todoList.get(1).getText()).toEqual('build an AngularJS app');
   });
 
   it('should list todos and should fail', () => {

@@ -14,11 +14,11 @@
   "author": "Craig Nishina <craig.nishina@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "protractor": "^5.0.0",
-    "typescript": "^2.1.4"
+    "protractor": "^5.1.0",
+    "typescript": "^2.1.5"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.40",
-    "@types/node": "^6.0.54"
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^6.0.62"
   }
 }

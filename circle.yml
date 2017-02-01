@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.9.1
+    version: 7.5.0
   environment:
     # Fix issue with selenium-server in containers.
     # See http://github.com/SeleniumHQ/docker-selenium/issues/87
@@ -8,16 +8,16 @@ machine:
 
 dependencies:
   override:
-    - npm update
+    - yarn
   post:
-    - npm run lint
-    - npm run tsc
-    - npm run webdriver-update
-    - npm run webdriver-start:
+    - yarn run lint
+    - yarn run tsc
+    - yarn run webdriver-update
+    - yarn run webdriver-start:
           background: true
-    - npm start:
+    - yarn start:
           background: true
 
 test:
   override:
-    - npm test
+    - yarn test
