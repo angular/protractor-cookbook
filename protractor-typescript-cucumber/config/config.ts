@@ -24,11 +24,9 @@ export let config: Config = {
   // These are various cucumber compiler options
   cucumberOpts: {
     compiler: "ts:ts-node/register",
-    monochrome: true,
-    strict: true,
-    plugin: ["pretty"],
+    format: ["pretty"],
     require: ['../../stepdefinitions/*.ts', '../../support/*.ts'],
     //tags help us execute specific scenarios of feature files
-    tags: '@AddScenario,@SubtractScenario,@MultiplyScenario,@DivideScenario,@ModulusScenario'
+    tags: '@AddScenario or @SubtractScenario or @MultiplyScenario or @DivideScenario or @ModulusScenario'
   }
 };

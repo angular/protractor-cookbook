@@ -1,15 +1,20 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es5",
+        "target": "es6",
         "moduleResolution": "node",
         "sourceMap": false,
         "declaration": false,
         "removeComments": false,
         "noImplicitAny": false,
         "outDir": "tmp",
-        "typeRoots": [ "./node_modules/@types" ],
-        "types": ["node","cucumber"]
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "node",
+            "cucumber"
+        ]
     },
     "exclude": [
         "node_modules",
