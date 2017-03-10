@@ -5,10 +5,9 @@ This project demonstrates the basic protractor-cucumber-typescript framework pro
 ###Features
 * No typings.json or typings folder, they have been replaced by better **'@types'** modules in package.json
 * ts-node(typescript execution environment for node) in cucumberOpts. 
-* All scripts written with Typescript2.0
+* All scripts written with Typescript2.0 & Cucumber2.0
 * Neat folder structures with transpiled js files in separate output folder.
 * Page Object design pattern implementation
-* DirectConnect capability for Chrome & Firefox(works best with 47.0.1) browsers
 * Extensive hooks implemented for BeforeFeature, AfterScenarios etc.
 * Screenshots on failure feature scenarios
 
@@ -19,7 +18,7 @@ This project demonstrates the basic protractor-cucumber-typescript framework pro
 1.NodeJS installed globally in the system.
 https://nodejs.org/en/download/
 
-2.Chrome or Firefox(47.0.1 recommended) browsers installed.
+2.Chrome or Firefox browsers installed.
 
 3.Text Editor(Optional) installed-->Sublime/Visual Studio Code/Brackets.
 
