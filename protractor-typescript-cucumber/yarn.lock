@@ -226,17 +226,17 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
-cucumber-expressions@^1.0.3:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/cucumber-expressions/-/cucumber-expressions-1.0.4.tgz#5d59d8ee39e18899431f49de16037e3161b8f31d"
+cucumber-expressions@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/cucumber-expressions/-/cucumber-expressions-3.0.0.tgz#4cf424813dae396cc9dab714b8104b459befc32c"
 
 cucumber-tag-expressions@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cucumber-tag-expressions/-/cucumber-tag-expressions-1.0.0.tgz#5dc27ae3073acde1db3aa7cf4d9609a42f15ee5d"
 
-cucumber@^2.0.0-rc.7:
-  version "2.0.0-rc.7"
-  resolved "https://registry.yarnpkg.com/cucumber/-/cucumber-2.0.0-rc.7.tgz#96c3abd45ba60c99e5205e4070991533559bb27e"
+cucumber@^2.0.0-rc.8:
+  version "2.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/cucumber/-/cucumber-2.0.0-rc.8.tgz#6da26dbccfb2e766826d8c09f1486b35b93b5d58"
   dependencies:
     assertion-error-formatter "^2.0.0"
     babel-runtime "^6.11.6"
@@ -244,13 +244,13 @@ cucumber@^2.0.0-rc.7:
     cli-table "^0.3.1"
     colors "^1.1.2"
     commander "^2.9.0"
-    cucumber-expressions "^1.0.3"
+    cucumber-expressions "^3.0.0"
     cucumber-tag-expressions "^1.0.0"
     duration "^0.2.0"
     figures "2.0.0"
     gherkin "^4.0.0"
     glob "^7.0.0"
-    indent-string "3.0.0"
+    indent-string "^3.1.0"
     is-generator "^1.0.2"
     is-stream "^1.1.0"
     lodash "^4.0.0"
@@ -477,11 +477,9 @@ https-proxy-agent@^1.0.0:
     debug "2"
     extend "3"
 
-indent-string@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.0.0.tgz#ddab23d32113ef04b67ab4cf4a0951c1a85fd60c"
-  dependencies:
-    repeating "^3.0.0"
+indent-string@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.1.0.tgz#08ff4334603388399b329e6b9538dc7a3cf5de7d"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -755,10 +753,6 @@ regenerator-runtime@^0.10.0:
 repeat-string@^1.5.2, repeat-string@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
-
-repeating@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/repeating/-/repeating-3.0.0.tgz#f4c376fdd2015761f6f96f4303b1224d581e802f"
 
 request@^2.78.0:
   version "2.81.0"

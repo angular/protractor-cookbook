@@ -10,6 +10,10 @@ dependencies:
   override:
     - yarn
   post:
+  # install latest google chrome to avoid chrome driver issues
+    - curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - sudo dpkg -i google-chrome.deb
+    - sleep 3
     - yarn run lint
     - yarn run tsc
     - yarn run webdriver-update
