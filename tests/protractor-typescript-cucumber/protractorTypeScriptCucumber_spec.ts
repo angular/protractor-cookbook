@@ -19,13 +19,14 @@ describe('protractor typescript cucumber', () => {
       if (output[1]) {
         let contents = output[1].toString();
         lines = contents.split('\n');
+        console.log(lines);
       }
     });
 
     it('console output', () => {
       let findLines = [
-        '5 scenarios (5 passed)',
-        '15 steps (15 passed)'
+        '5 scenarios',
+        '15 steps'
       ];
       expect(lines).not.toBeNull();
       expect(TestUtils.checkContents(lines, findLines)).toBeTruthy();
