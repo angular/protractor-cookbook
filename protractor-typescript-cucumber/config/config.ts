@@ -1,5 +1,7 @@
-import { environment } from './environment';
 import { browser, Config } from 'protractor';
+import { Reporter } from '../support/reporter';
+import { environment } from './environment';
+const jsonReports = process.cwd() + '/reports/json';
 
 /*
 The config folder includes all the configuration files
@@ -12,21 +14,28 @@ export let config: Config = {
   baseUrl: environment.baseUrl,
   capabilities: environment.capabilities,
   framework: 'custom',
+  SELENIUM_PROMISE_MANAGER: false,
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   specs: [
-    '../../features/*.feature'
+    '../../features/*.feature',
   ],
   // This utility function helps prepare our scripts with required actions like browser maximize
   onPrepare: () => {
     browser.driver.manage().window().maximize();
+    Reporter.createDirectory(jsonReports);
   },
   // These are various cucumber compiler options
   cucumberOpts: {
-    compiler: "ts:ts-node/register",
-    format: ["pretty"],
+    compiler: 'ts:ts-node/register',
+    format: 'json:./reports/json/cucumber_report.json',
     require: ['../../stepdefinitions/*.ts', '../../support/*.ts'],
-    //tags help us execute specific scenarios of feature files
-    tags: '@AddScenario or @SubtractScenario or @MultiplyScenario or @DivideScenario or @ModulusScenario'
-  }
+    strict: true,
+    // tags help us execute specific scenarios of feature files
+    tags: '@AddScenario or @SubtractScenario or @MultiplyScenario or @DivideScenario or @ModulusScenario',
+  },
+
+  onComplete: () => {
+    Reporter.createHTMLReport();
+  },
 };
