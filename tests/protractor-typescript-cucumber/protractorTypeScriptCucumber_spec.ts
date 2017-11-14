@@ -19,7 +19,6 @@ describe('protractor typescript cucumber', () => {
       if (output[1]) {
         let contents = output[1].toString();
         lines = contents.split('\n');
-        console.log(lines);
       }
     });
 
