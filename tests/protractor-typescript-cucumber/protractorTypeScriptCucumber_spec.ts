@@ -24,40 +24,8 @@ describe('protractor typescript cucumber', () => {
 
     it('console output', () => {
       let findLines = [
-        '@AddScenario',
-        'Scenario: Add two numbers',
-        '✔ Given I am on ng1 calculator page',
-        '✔ When I calculate "3" "+" "5"',
-        '✔ Then the result "8" should be displayed',
-
-        '@SubtractScenario',
-        'Scenario: Subtract two numbers',
-        '✔ Given I am on ng1 calculator page',
-        '✔ When I calculate "7" "-" "5"',
-        '✔ Then the result "2" should be displayed',
-        'Feature: To test the modulus feature of ng1 calculator',
-
-        '@ModulusScenario',
-        'Scenario: Modulus of two numbers',
-        '✔ Given I am on ng1 calculator page',
-        '✔ When I calculate "6" "%" "4"',
-        '✔ Then the result "2" should be displayed',
-
-        'Feature: To test the multiply & divide feature of ng1 calculator',
-        '@MultiplyScenario',
-        'Scenario: Multiply two numbers',
-        '✔ Given I am on ng1 calculator page',
-        '✔ When I calculate "3" "*" "5"',
-        '✔ Then the result "15" should be displayed',
-
-        '@DivideScenario',
-        'Scenario: Divide two numbers',
-        '✔ Given I am on ng1 calculator page',
-        '✔ When I calculate "10" "/" "5"',
-        '✔ Then the result "2" should be displayed',
-
-        '5 passed',
-        '15 passed'
+        '5 scenarios',
+        '15 steps'
       ];
       expect(lines).not.toBeNull();
       expect(TestUtils.checkContents(lines, findLines)).toBeTruthy();
