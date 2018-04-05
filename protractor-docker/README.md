@@ -111,7 +111,7 @@ We would do the above the steps , by specifying a .yml file and see the results.
 Create a docker-compose.yml 
 
 ``` yaml
-version: '3'
+version: '3.5'
 services:
   chrome:
     image: selenium/node-chrome-debug:3.11.0-californium
