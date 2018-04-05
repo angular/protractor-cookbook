@@ -1,0 +1,8 @@
+{
+    "name": "protractor-docker-test-app",
+    "dependencies": {
+    },
+    "scripts": {
+        "start": "node ./"
+    }
+}

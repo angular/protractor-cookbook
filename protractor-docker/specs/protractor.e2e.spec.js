@@ -5,6 +5,6 @@ describe('On Protractor page', function () {
     });
 
     it('should have the expected the title', function () {
-        expect(browser.getTitle()).toBe('Protractor - end to end testing for AngularJS');
+        expect(browser.getTitle()).toBe('Protractor - end-to-end testing for AngularJS');
     });
 });

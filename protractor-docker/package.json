@@ -4,7 +4,7 @@
         "protractor": "4.0.9"
     },
     "scripts": {
-        "pretest": "npm install && ./docker-setup.sh",
-        "test": "protractor docker-selenium-grid-conf.js"
+        "test": "docker run -it --rm --network=protractortest -v /dev/shm:/dev/shm -v $(pwd):/protractor jozzhart/node-6-protractor ./docker-selenium-grid-conf.js",
+        "start": "node ./app"
     }
 }
