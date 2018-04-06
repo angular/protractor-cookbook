@@ -1,7 +1,7 @@
 describe('On app page', function () {
 
   beforeAll(function () {
-    browser.get('http://angular:8000')
+    browser.get('http://angular:8000');
   })
 
   it('should have the expected the title', function () {
