@@ -111,24 +111,37 @@ We would do the above the steps , by specifying a .yml file and see the results.
 Create a docker-compose.yml 
 
 ``` yaml
-seleniumhub:
-  image: selenium/hub:2.53.0
-  ports:
-    - 4444:4444
-
-# firefoxnode:
-#   image: selenium/node-firefox
-#   expose:
-#     - 5900
-#   links:
-#     - seleniumhub:hub
-
-chromenode:
-  image: selenium/node-chrome:2.53.0
-  ports:
-    - 5900
-  links:
-    - seleniumhub:hub
+version: '3.5'
+services:
+  chrome:
+    image: selenium/node-chrome-debug:3.11.0-californium
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      HUB_HOST: hub
+    ports:
+      - "5900:5900"  
+    networks:
+      - protractortest
+  hub:
+    image: selenium/hub:3.11.0-californium
+    ports:
+      - "4444:4444"
+    networks:
+      - protractortest
+  angular:
+    image: node:6-alpine
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/var/www
+    working_dir: /var/www
+    command: ["npm", "start"]
+    networks:
+      - protractortest
+networks:
+  protractortest:
+    name: protractortest
 ```
 
 Then in the terminal, enter the command
@@ -136,26 +149,11 @@ Then in the terminal, enter the command
 ``` shell
 docker-compose up -d
 ```
-In order to scale the number of chrome nodes , one can do :
-
-``` shell 
-docker-compose scale chromenode=5
-```
-
-The number of nodes that one can connect to a selenium hub is by default 5.Hence `chromenode=5`.
-If one wants to increase the number of nodes, one has to change the settings on Hub to support the additional nodes first.
-
-The best way to do would be to wrap all of the above in a shell script file .
-Ensure the shell script file has execute permissions.
 
 ``` shell
-docker -v
-docker-compose -v
-
-docker-compose up -d --remove-orphans
-docker-compose scale chromenode=5
+docker run -it --rm --network=protractortest -v /dev/shm:/dev/shm -v $(pwd):/protractor jozzhart/node-6-protractor ./docker-selenium-grid-conf.js
 ```
-and then reference it in the package.json
+or use the shortcut
 
 ``` shell
 npm test

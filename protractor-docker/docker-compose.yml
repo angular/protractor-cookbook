@@ -1,25 +1,31 @@
-seleniumhub:
-  image: selenium/hub:2.53.0
-  ports:
-    - 4444:4444
-
-# chromednode:
-#   image: selenium/node-chrome-debug:2.53.0
-#   expose:
-#     - 5900
-#   links:
-#     - seleniumhub:hub
-
-# firefoxnode:
-#   image: selenium/node-firefox
-#   expose:
-#     - 5900
-#   links:
-#     - seleniumhub:hub
-
-chromenode:
-  image: selenium/node-chrome:2.53.0
-  ports:
-    - 5900
-  links:
-    - seleniumhub:hub
+version: '3.5'
+services:
+  chrome:
+    image: selenium/node-chrome-debug:3.11.0-californium
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      HUB_HOST: hub
+    ports:
+      - "5900:5900"  
+    networks:
+      - protractortest
+  hub:
+    image: selenium/hub:3.11.0-californium
+    ports:
+      - "4444:4444"
+    networks:
+      - protractortest
+  angular:
+    image: node:6-alpine
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/var/www
+    working_dir: /var/www
+    command: ["npm", "start"]
+    networks:
+      - protractortest
+networks:
+  protractortest:
+    name: protractortest
