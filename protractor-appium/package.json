@@ -1,0 +1,19 @@
+{
+  "name": "protractor-appium-hybridapps",
+  "version": "1.0.0",
+  "description": "a protractor with appium example",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start-appium": "appium",
+    "test": "protractor example-browser/config.js && protractor example-hybridapps/config.js"
+  },
+  "author": "Sudharsan Selvaraj <sudharsanselvaraj.c@gmail.com> (https://github.com/sudharsan-selvaraj/)",
+  "license": "ISC",
+  "dependencies": {
+    "appium": "^1.8.0",
+    "protractor": "^5.3.1"
+  }
+}
