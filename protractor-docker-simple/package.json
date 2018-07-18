@@ -1,0 +1,17 @@
+{
+    "name": "protractor-docker-setup",
+    "scripts": {
+        "prestart": "npm i && cd ../testapp && npm i",
+        "start": "docker-compose run -d -p 8080:8080 app",
+        "prestart:windows": "npm i && cd ../testapp && npm i",
+        "start:windows": "docker-compose -f docker-compose.yml -f docker-compose.windows.yml run -d -p 8080:8080 app",
+        "stop": "docker-compose down",
+        "pretest": "npm i && cd ../testapp && npm i",
+        "test": "docker-compose up --abort-on-container-exit --exit-code-from e2e",
+        "pretest:windows": "npm i && cd ../testapp && npm i",
+        "test:windows": "docker-compose -f docker-compose.yml -f docker-compose.windows.yml up --abort-on-container-exit --exit-code-from e2e"
+    },
+    "dependencies": {
+        "jasmine-reporters": "^2.3.1"
+    }
+}

@@ -1,0 +1,26 @@
+version: '2.4'
+
+services:
+
+  # to manually verify the site:
+  # 1. docker-compose run -d -p 8080:8080 app
+  # 2. browse to http://localhost:8080/ng1/calculator
+  app:
+    image: node:6.14-slim
+    working_dir: /src
+    command: node index.js
+    volumes: 
+      - "../testapp:/src"
+
+  e2e:
+    image: webnicer/protractor-headless
+    command: ./conf.js
+    shm_size: 2g
+    volumes: 
+      - "./:/protractor"
+      - "tests-output:/test-output"
+    depends_on:
+      - app
+
+volumes: 
+  tests-output:
