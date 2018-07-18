@@ -1,0 +1,11 @@
+version: '2.4'
+
+# you are on windows and are using LCOW
+
+services:
+
+  app:
+    platform: linux
+
+  e2e:
+    platform: linux
